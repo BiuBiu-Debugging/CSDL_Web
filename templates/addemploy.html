@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="my_script.js"></script>
+    <link rel="stylesheet" type="text/css" href="../static/style1.css">
+</head>
+
+<body>
+    <div class="site-wrap">
+
+        <nav class="site-nav">
+
+            <div class="name">
+                Menu
+
+                <svg width="24" height="24" viewBox="0 0 24 24">
+                </svg>
+            </div>
+
+            <ul>
+                <li><a href="/hom">Home</a></li>
+                <li><a href="/query">Query</a></li>
+                <li><a href="/yourdatabase">Your Database</a></li>
+                <li><a href="/yourdb">Create Table</a></li>
+                <li><a href="/yourtable">Delete Table</a></li>
+                <li style="background-color: rgb(16, 18, 56)"><a href="/addemploy" style="text-decoration: underline;">Exits
+                        Management Employee</a></li>
+            </ul>
+
+        </nav>
+
+        <main>
+            <header>
+                <div class="breadcrumbs">
+                    Add Employer
+                </div>
+            </header>
+            <center style=" height: 80%;">
+                <font color="black" size="4" style="font-family: avenir" class="font_t">
+                    <form action="/update_employ_data" method="POST" enctype="multipart/form-data" class="form-container">
+                        <h1>Employer database</h1>
+                        <div class="form-grid">
+
+                            <div class="form-group">
+                                <label>First Name:</label>
+                                <input type="text" name="first_name">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Last Name:</label>
+                                <input type="text" name="last_name">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Primary Skills:</label>
+                                <input type="text" name="pri_skill">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Email:</label>
+                                <input type="text" name="email">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Phone Number:</label>
+                                <input type="text" name="phone_number">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Location:</label>
+                                <input type="text" name="location">
+                            </div>
+
+                            <div class="form-group1">
+                                <label>Image:</label>
+                                <input type="file" name="emp_image_file">
+                            </div>
+                            <div class="form-group1">
+                                <label >{{addlabel}}</label>
+                            </div>
+                            <button type="submit" class="big-button" id="big-button2" >INSERT INFOMATION</button>
+
+                        </div>
+                    </form>
+                    <div class="action_btn">
+                        <a href="/getemploy" class="big-button2">SEARCH INFORMATION </a>
+                    </div>
+
+                </font>
+            </center>
+        </main>
+
+    </div>
+</body>
+
+</html>

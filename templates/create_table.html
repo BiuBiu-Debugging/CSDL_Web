@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../static/crip.js"></script>
+    <link rel="stylesheet" type="text/css" href="../static/style1.css">
+
+    <link rel="stylesheet" type="text/css" href="../static/style3.css">
+</head>
+
+<body>
+    <div class="site-wrap">
+
+        <nav class="site-nav">
+
+            <div class="name">
+                Menu
+
+                <svg width="24" height="24" viewBox="0 0 24 24">
+                </svg>
+            </div>
+
+            <ul>
+                <li><a href="/hom">Home</a></li>
+                <li><a href="/query">Query</a></li>
+                <li><a href="/yourdatabase">Your Database</a></li>
+                <li style="background-color: rgb(16, 18, 56)"><a href="/yourdb"
+                        style="text-decoration: underline;">Create Table</a></li>
+                <li><a href="/yourtable">Delete Table</a></li>
+                <li><a href="/addemploy">Management Employer Table</a></li>
+            </ul>
+
+        </nav>
+
+        <main>
+            <header>
+                <div class="breadcrumbs">
+                    Create Table
+                </div>
+            </header>
+            <form action="/create_table" autocomplete="on" method="POST">
+                <select class="tal_name" name="db_name" style="height: 30px; margin-left: 75%;" required>
+                    <option value="">-- Chọn database --</option>
+                    {% for table_name in tables %}
+                    <option value="{{ table_name }}">{{ table_name }}</option>
+                    {% endfor %}
+                </select>
+                <div class="tal_name" style="margin-left: 75%;">
+                    <input type="text" placeholder="Your table name" required name="table_name">
+                </div>
+                <input type="hidden" id="hiddenCounter" name="countcolum" value="1">
+                <div class="table-designer">
+                    <div class="header-row">
+                        <span class="col-name" >Column Name</span>
+                        <span class="col-datatype" >Datatype</span>
+                        <span class="col-flags">
+                            <span title="Primary Key" >PK</span>
+                            <span title="Not Null">NN</span>
+                            <span title="Auto Increment">AI</span>
+                        </span>
+                    </div>
+
+                    <div id="data-rows-container">
+                        <div class="data-row">
+                            <input type="text" class="col-name-input" placeholder="Tên cột" required name="col_name_1">
+                            <input type="text" class="col-datatype-input" placeholder="Kiểu dữ liệu" required name="col_datatype_1">
+                            <div class="col-flags-inputs">
+                                <input type="checkbox" title="Primary Key" name="PrimaryKey_1">
+                                <input type="checkbox" title="Not Null" name="NotNull_1">
+                                <input type="checkbox" title="Auto Increment"name="AutoIncrement_1">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <button id="addRowButton" class="add-row-btn" type="button"> Thêm Hàng Mới</button>
+                <button type="submit" id="btn_create">Create</button>
+            </form>
+            <textarea name="contentt" class="inf" placeholder="">{{ result_output if result_output is not none else '' }}</textarea>
+        </main>
+
+    </div>
+</body>
+
+</html>

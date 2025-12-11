@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="my_script.js"></script>
+    <link rel="stylesheet" type="text/css" href="../static/style1.css">
+</head>
+
+<body>
+    <div class="site-wrap">
+
+        <nav class="site-nav">
+
+            <div class="name">
+                Menu
+
+                <svg width="24" height="24" viewBox="0 0 24 24">
+                </svg>
+            </div>
+
+            <ul>
+                <li><a href="/hom">Home</a></li>
+                <li><a href="/query">Query</a></li>
+                <li><a href="/yourdatabase">Your Database</a></li>
+                <li><a href="/yourdb">Create Table</a></li>
+                <li><a href="/yourtable">Delete Table</a></li>
+                <li style="background-color: rgb(16, 18, 56)"><a href="/addemploy" style="text-decoration: underline;">Exits
+                        Management Employee</a></li>
+            </ul>
+
+        </nav>
+
+        <main>
+            <header>
+                <div class="breadcrumbs">
+                    Get information
+                </div>
+            </header>
+            <center style=" height: 80%;">
+                <font color="black" size="4" style="font-family: avenir" class="font_t">
+                    <form action="/getinfbyPhone" method="POST" class="form-container">
+                        <h1>Search information</h1>
+                        <div class="form-grid1">
+                            <div class="form-group1">
+                                <label>Phone Number</label>
+                                <input type="number" name="phone_number" style="margin-top: 15px; height: 30px;" required>
+                                <label style="font-size:small; color: red; margin-top: 5px;">{{lbelresult}}</label>
+                            </div>
+                        </div>
+                        <button type="submit" class="big-button1" >Get information</button>
+                    </form>
+                    <div class="action_btn">
+                        <a href="/addemploy" class="big-button2">INSERT INFOMATION </a>
+                    </div>
+
+                </font>
+            </center>
+        </main>
+
+    </div>
+</body>
+
+</html>

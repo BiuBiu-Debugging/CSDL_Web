@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="my_script.js"></script>
+    <link rel="stylesheet" type="text/css" href="../static/style1.css">
+</head>
+
+<body>
+    <div class="site-wrap">
+
+        <nav class="site-nav">
+
+            <div class="name">
+                Menu
+
+                <svg width="24" height="24" viewBox="0 0 24 24">
+                </svg>
+            </div>
+
+            <ul>
+                <li><a href="/hom">Home</a></li>
+                <li><a href="/query">Query</a></li>
+                <li><a href="/yourdatabase">Your Database</a></li>
+                <li><a href="/createtable">Create Table</a></li>
+                <li><a href="/yourtable">Delete Table</a></li>
+                <li style="background-color: rgb(16, 18, 56)"><a href="/addemploy"
+                        style="text-decoration: underline;">Exits
+                        Management Employee</a></li>
+            </ul>
+
+        </nav>
+
+        <main>
+            <header>
+                <div class="breadcrumbs">
+                    Get information
+                </div>
+            </header>
+            <div class="infout">
+
+                <div class="inf-container">
+                    <span class="n-label">Employee ID:</span>
+                <span class="n-value">{{ id }}</span>
+
+                <span class="n-label">First Name:</span>
+                <span class="n-value">{{ fname }}</span>
+
+                <span class="n-label">Last Name:</span>
+                <span class="n-value">{{ lname }}</span>
+
+                <span class="n-label">Primary Interest:</span>
+                <span class="n-value">{{ interest }}</span>
+
+                <span class="n-label">Email:</span>
+                <span class="n-value">{{ email }}</span>
+
+                <span class="n-label">Phone Number:</span>
+                <span class="n-value">{{ phone_number }}</span>
+
+                <span class="n-label">Location:</span>
+                <span class="n-value">{{ location }}</span>
+
+                </div>
+                <div class="n-image-container">
+                    <img src="{{ image_url }}" alt="Employee Photo" width="300" height="300"
+                        style="border-radius:10px; border:2px solid #000000; margin-left: 60px; margin-top: 0px;">
+                </div>
+
+            </div>
+            <div class="action_btn">
+                <a href="/addemploy" class="big-button2">INSERT INFOMATION </a>
+            </div>
+        </main>
+
+    </div>
+</body>
+
+</html>

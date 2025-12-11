@@ -1,0 +1,148 @@
+
+.add-row-btn {
+    display: block; /* Đảm bảo nút chiếm một hàng riêng */
+    margin: 10px auto 0 auto; /* Đẩy xuống dưới bảng, căn giữa */
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Màu xanh lá cây */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.add-row-btn:hover {
+    background-color: #45a049;
+}
+.tal_name{
+    border-radius: 10px;
+    border: none;
+    width: 20%;
+    margin-left: 80%;
+    margin-bottom: 20px;
+}
+.table-designer {
+    position: relative; 
+    margin-top: 20px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+/* Hoặc cách đơn giản hơn: */
+.button-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto; /* Đặt container nút cùng kích thước với bảng */
+    text-align: right; /* Căn chỉnh nội dung (nút) sang phải */
+    padding-top: 10px;
+}
+/* Thiết lập cơ bản */
+
+.inf{
+    position: absolute;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 10%;
+    width: 80%;
+}
+.table-designer {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* --- Bố cục Header và Data Row --- */
+.header-row, .data-row {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding: 8px 10px; /* Thêm padding ngang cho dễ nhìn */
+}
+
+/* --- Thiết lập Header Row (Hàng tiêu đề) --- */
+.header-row {
+    background-color: #f7f7f7;
+    font-weight: bold;
+    color: #555;
+    font-size: 0.9em;
+}
+
+.header-row > span {
+    padding: 0 5px;
+}
+
+/* --- Thiết lập Data Row (Hàng dữ liệu) --- */
+.data-row {
+    height: 40px; /* Chiều cao cố định cho hàng */
+}
+
+.data-row input[type="text"] {
+    border: none;
+    padding: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* --- Định nghĩa kích thước các cột --- */
+
+/* Tên Cột */
+.col-name, .col-name-input {
+    flex-basis: 25%;
+    min-width: 150px;
+}
+
+/* Kiểu Dữ liệu */
+.col-datatype, .col-datatype-input {
+    flex-basis: 15%;
+    min-width: 100px;
+}
+
+/* Các Cờ (Flags: PK, NN, UQ,...) */
+.col-flags {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end; /* Căn chỉnh tiêu đề cờ xuống dưới */
+    flex-basis: 25%;
+    min-width: 180px;
+}
+
+.col-flags-inputs {
+    display: flex;
+    justify-content: space-between;
+    flex-basis: 25%;
+    min-width: 180px;
+    padding-top: 5px; 
+}
+
+/* Các ô checkbox */
+.col-flags-inputs input[type="checkbox"] {
+    margin: 0;
+    /* Đảm bảo checkbox nằm giữa khoảng trống */
+    width: 16px; 
+    height: 16px;
+}
+
+/* Default/Expression */
+.col-default, .col-default-input {
+    flex-basis: 35%;
+    min-width: 200px;
+}
+
+/* Dấu gạch chéo phân chia các cột nhỏ trong nhóm Flags */
+.col-flags span:not(:last-child) {
+    border-right: 1px solid #ddd;
+    padding-right: 5px;
+    margin-right: 5px;
+}
+
+/* Đảm bảo các input không bị giãn ra khỏi box */
+.data-row input[type="text"] {
+    /* Đặt padding bằng 0 để tận dụng hết không gian flexbox */
+    padding: 0; 
+    height: 100%;
+}

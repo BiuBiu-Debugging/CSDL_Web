@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="../static/style1.css">
+</head>
+
+<body>
+    <div class="site-wrap">
+
+        <nav class="site-nav">
+
+            <div class="name">
+                Menu
+
+                <svg width="24" height="24" viewBox="0 0 24 24">
+                </svg>
+            </div>
+
+            <ul>
+                <li><a href="/hom">Home</a></li>
+                <li style="background-color: rgb(16, 18, 56)"><a href="/query"style="text-decoration: underline;">Query</a></li>
+                <li><a href="/yourdatabase">Your Database</a></li>
+                <li><a href="/yourdb">Create Table</a></li>
+                <li><a href="/yourtable">Delete Table</a></li>
+                <li><a href="/addemploy">Management Employer Table</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <header>
+                <div class="breadcrumbs">
+                    SQL Query
+                </div>
+            </header>
+            <form action="/execute" class="formquery" autocomplete="on" method="POST">
+                <div class="main2">
+                    <textarea name="wquery" class="wquery" placeholder="Write your query here...">{{ wquery_content if wquery_content is not none else '' }}</textarea>
+                </div>
+                <footer>
+                    <button id="query_footer" type="submit">Excute</button>
+                </footer>
+            </form>
+                 <textarea name="contentt" class="cquery" placeholder="">   {{ result_output if result_output is not none else '' }}</textarea>
+
+        </main>
+
+    </div>
+</body>
+
+</html>

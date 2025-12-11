@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="../static/style1.css">
+    <link rel="stylesheet" type="text/css" href="../static/style3.css">
+</head>
+
+<body>
+    <div class="site-wrap">
+
+        <nav class="site-nav">
+
+            <div class="name">
+                Menu
+
+                <svg width="24" height="24" viewBox="0 0 24 24">
+                </svg>
+            </div>
+
+            <ul>
+                <li><a href="/hom">Home</a></li>
+                <li><a href="/query">Query</a></li>
+                <li><a href="/yourdatabase">Your Database</a></li>
+                <li><a href="/yourdb">Create Table</a></li>
+                <li style="background-color: rgb(16, 18, 56)"><a href="/yourtable"
+                        style="text-decoration: underline;">Delete
+                        Table</a></li>
+                <li><a href="/addemploy">Management Employer Table</a></li>
+            </ul>
+
+        </nav>
+
+        <main>
+            <header>
+                <div class="breadcrumbs">
+                    Delete Table
+                </div>
+            </header>
+            <form class="formquery" method="post" autocomplete="on" action="/deletetable" style="margin-top: 30px;">
+                <label for="country_select" class="lbtb">Select table:</label>
+                <select id="tables_select" name="table_name">
+                    <option value="">-- Chọn bảng muốn xóa --</option>
+                    {% for table_name in tables %}
+                    <option value="{{ table_name }}">{{ table_name }}</option>
+                    {% endfor %}
+                </select>
+                <button type="submit" class="dele_btn">Delete</button>
+            </form>
+            <textarea name="contentt" class="inf"
+                placeholder="">{{ result_output if result_output is not none else '' }}</textarea>
+        </main>
+
+    </div>
+</body>
+
+</html>
